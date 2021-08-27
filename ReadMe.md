@@ -1,3 +1,11 @@
+# 로컬 바운드 서비스 example
+
+## 프로젝트에 바운드 서비스 추가 
+
+- ~~new-service-localbound~~
+- new-service-service
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lilcode.example.localboundservice">
@@ -26,3 +34,19 @@
     </application>
 
 </manifest>
+```
+
+```kotlin
+package com.lilcode.example.localboundservice
+
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
+
+class BoundService : Service() {
+
+    override fun onBind(intent: Intent): IBinder {
+        TODO("Return the communication channel to the service.")
+    }
+}
+```
