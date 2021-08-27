@@ -7,6 +7,7 @@ import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
+import android.view.View
 import com.lilcode.example.localboundservice.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -36,5 +37,10 @@ class MainActivity : AppCompatActivity() {
             isBound = false
         }
 
+    }
+
+    fun showTime(view: View) {
+        val currentTime = myService?.getCurrentTime() // 서비스의 함수를 호출
+        binding.myTextView.text = currentTime
     }
 }
